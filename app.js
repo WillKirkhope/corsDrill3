@@ -7,7 +7,7 @@ const port = parseInt(process.env.PORT || 8080)
 const app = express()
 app.use(cors())
 
-function getInstructorById(data, id){
+function getStudentById(data, id){
   for (let i = 0; i < data.length; i++) {
     if(data[i].id == id){
       return data[i]
@@ -23,8 +23,8 @@ app.get('/', function(request, response){
 })
 
 app.get('/:id', function (request, response){
-  var instructor = getInstructorById(data, request.params.id)
-  if(!instructor){
+  var student = getStudentById(data, request.params.id)
+  if(!student){
     response.status(404).json({
       error: {
         message: 'No instructor found!'
@@ -32,7 +32,7 @@ app.get('/:id', function (request, response){
     })
   }else{
     response.json({
-      data: instructor
+      data: student
     })
   }
 })
