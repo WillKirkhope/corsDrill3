@@ -27,7 +27,7 @@ app.get('/:id', function (request, response){
   if(!student){
     response.status(404).json({
       error: {
-        message: 'No instructor found!'
+        message: 'No Student found!'
       }
     })
   }else{
