@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const data = require('./api/instructorDogRatio')
+const data = require('./api/studentHomeTown')
 const port = parseInt(process.env.PORT || 8080)
 
 
